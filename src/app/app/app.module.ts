@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatCardModule } from '@angular/material/card';
-import { MatToolbar } from '@angular/material/toolbar';
-import { MatIcon } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
-import { MatTable } from '@angular/material/table';
+import { FormsModule } from '@angular/forms';
+import { AppComponent } from '../app.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
     CommonModule,
-    MatCardModule,
-    MatToolbar,
-    MatIcon,
     HttpClientModule,
-    MatTable,
+    FormsModule,
+    MatIconModule,
+    MatToolbarModule,
     MatButtonModule
   ],
-  declarations: []
+  declarations: [AppComponent]
 })
 export class AppModule { }
