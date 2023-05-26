@@ -20,6 +20,9 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forChild(routes)
   ],
+  exports: [
+    RouterModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
