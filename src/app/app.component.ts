@@ -7,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    window.location.href = 'home';
+  }
 
   ngOnInit() {
-    // window.location.href = 'home'
+    
   }
 
 }
