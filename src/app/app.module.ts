@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
 
 const routes: Routes = [
   {
@@ -18,10 +20,14 @@ const routes: Routes = [
     CommonModule,
     HttpClientModule,
     BrowserModule,
-    RouterModule.forChild(routes)
+    MatCardModule,
+    MatToolbarModule,
+    RouterModule.forRoot(routes)
   ],
   exports: [
-    RouterModule
+    RouterModule,
+    MatToolbarModule,
+    MatCardModule
   ],
   bootstrap: [AppComponent]
 })
