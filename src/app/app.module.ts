@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./main/home/home.module').then(m => m.HomeModule)
+  },
+  {
+    path: 'api-calls',
+    loadChildren: () => import('./main/api-calls/api-calls.module').then(m => m.ApiCallsModule)
   }
 ]
 
