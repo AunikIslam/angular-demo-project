@@ -14,12 +14,12 @@ const routes: Routes = [
 @NgModule( {
     declarations: [ ApiCallsComponent ],
     imports: [
+      MatTableModule,
       RouterModule.forChild(routes), 
       FlexLayoutModule
     ], 
     exports: [
-      RouterModule,
-      MatTableModule
+      RouterModule
     ]
 } )
 export class ApiCallsModule {}
