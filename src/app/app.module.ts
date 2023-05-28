@@ -7,14 +7,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 const routes: Routes = [
   {
-    path: '',
-    children: [
-      {
-        path: 'home',
-        loadChildren: () => import('./main/home/home.module').then(m => m.HomeModule)
-      }
-    ]
-    
+    path: 'home',
+    loadChildren: () => import('./main/home/home.module').then(m => m.HomeModule)
   }
 ]
 
