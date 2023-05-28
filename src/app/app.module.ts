@@ -4,6 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const routes: Routes = [
   {
@@ -22,6 +26,10 @@ const routes: Routes = [
     CommonModule,
     HttpClientModule,
     BrowserModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    FlexLayoutModule,
     RouterModule.forRoot(routes)
   ],
   exports: [

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { MatTableModule } from '@angular/material/table';
 import { RouterModule, Routes } from '@angular/router';
 import { ApiCallsComponent } from './api-calls.component';
 
@@ -15,7 +16,8 @@ const routes: Routes = [
         RouterModule.forChild(routes)
     ], 
     exports: [
-      RouterModule
+      RouterModule,
+      MatTableModule
     ]
 } )
 export class ApiCallsModule {}
