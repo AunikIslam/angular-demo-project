@@ -13,7 +13,7 @@ const routes: Routes = [
 @NgModule( {
     declarations: [ ApiCallsComponent ],
     imports: [
-        RouterModule.forChild(routes)
+      RouterModule.forChild(routes)
     ], 
     exports: [
       RouterModule,
