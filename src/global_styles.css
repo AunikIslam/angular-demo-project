@@ -1,2 +1,10 @@
 /* Add application styles & imports to this file! */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.display-card {
+  background-color: rgb(19, 35, 49);
+  margin: 5px;
+  height: 25px;
+  width: 25px;
+  border: 1px solid black;
+}
