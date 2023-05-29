@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { ApiService } from 'src/app/services/api-service';
+import { ApiService } from './api-calls-service';
 
 export interface PeriodicElement {
   name: string;
@@ -31,6 +31,11 @@ export class ApiCallsComponent implements OnInit {
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource: MatTableDataSource<any>;
+  filters = {
+    limit: 15,
+    t: 2023
+  };
+  redditContents = [];
   
   constructor(private service: ApiService) {
     this.dataSource = new MatTableDataSource(ELEMENT_DATA);
@@ -41,9 +46,9 @@ export class ApiCallsComponent implements OnInit {
   }
 
   getFirstApiData(): void {
-    const api = 'https://api.apis.guru/v2/list.json';
-    this.service.getData(api).subscribe(pResponse => {
-      console.log(pResponse);
+    const api = 'https://www.reddit.com/r/Wallstreetbets/top.json';
+    this.service.getData(api, this.filters).subscribe(pResponse => {
+      this.redditContents = pResponse['data']['children'];
     })
   }
 
