@@ -1,5 +1,9 @@
-<div fxLayout="row" fxLayoutAlign="space-around start" >
-  <div class="display-card">
+<div fxLayout="row wrap">
+  <ng-container *ngFor="let content of redditContents; let i = index">
+    <div class="display-card">
+        {{content['kind']}}
+    </div>
+    <br>
+  </ng-container>
 
-  </div>
 </div>

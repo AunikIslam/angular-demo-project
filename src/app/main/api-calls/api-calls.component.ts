@@ -49,6 +49,7 @@ export class ApiCallsComponent implements OnInit {
     const api = 'https://www.reddit.com/r/Wallstreetbets/top.json';
     this.service.getData(api, this.filters).subscribe(pResponse => {
       this.redditContents = pResponse['data']['children'];
+      console.log(this.redditContents);
     })
   }
 

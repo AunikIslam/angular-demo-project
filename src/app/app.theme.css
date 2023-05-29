@@ -1,0 +1,7 @@
+.display-card {
+  /* background-color: rgb(29, 129, 218); */
+  margin-right: 5px;
+  height: 25px;
+  width: 25px;
+  border: 1px solid black;
+}

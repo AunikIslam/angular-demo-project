@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatTableModule } from '@angular/material/table';
@@ -16,7 +17,8 @@ const routes: Routes = [
     imports: [
       MatTableModule,
       RouterModule.forChild(routes), 
-      FlexLayoutModule
+      FlexLayoutModule,
+      CommonModule
     ], 
     exports: [
       RouterModule
