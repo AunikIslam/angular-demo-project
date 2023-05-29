@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { ApiService } from 'src/app/services/api-service';
 
 export interface PeriodicElement {
   name: string;
@@ -31,11 +32,19 @@ export class ApiCallsComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource: MatTableDataSource<any>;
   
-  constructor() {
+  constructor(private service: ApiService) {
     this.dataSource = new MatTableDataSource(ELEMENT_DATA);
+    this.getFirstApiData();
    }
 
   ngOnInit() {
+  }
+
+  getFirstApiData(): void {
+    const api = 'https://api.apis.guru/v2/list.json';
+    this.service.getData(api).subscribe(pResponse => {
+      console.log(pResponse);
+    })
   }
 
 }
