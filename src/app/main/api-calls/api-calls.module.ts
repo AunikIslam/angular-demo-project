@@ -4,6 +4,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { RouterModule, Routes } from '@angular/router';
+import { SharedModule } from '../shared.module';
 import { ApiCallsComponent } from './api-calls.component';
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
       RouterModule.forChild(routes), 
       FlexLayoutModule,
       CommonModule,
-      MatIconModule
+      MatIconModule, 
+      SharedModule
     ], 
     exports: [
       RouterModule
