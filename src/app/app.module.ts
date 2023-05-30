@@ -5,9 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatIconModule } from '@angular/material/icon';
 
 const routes: Routes = [
   {
@@ -27,8 +26,7 @@ const routes: Routes = [
     HttpClientModule,
     BrowserModule,
     MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
+    MatIconModule,
     FlexLayoutModule,
     RouterModule.forRoot(routes)
   ],

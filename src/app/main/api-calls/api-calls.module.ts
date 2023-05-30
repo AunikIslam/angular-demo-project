@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { RouterModule, Routes } from '@angular/router';
 import { ApiCallsComponent } from './api-calls.component';
@@ -18,7 +19,8 @@ const routes: Routes = [
       MatTableModule,
       RouterModule.forChild(routes), 
       FlexLayoutModule,
-      CommonModule
+      CommonModule,
+      MatIconModule
     ], 
     exports: [
       RouterModule

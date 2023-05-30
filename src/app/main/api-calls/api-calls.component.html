@@ -1,7 +1,13 @@
-<div fxLayout="row wrap">
+<div fxLayout="row wrap" fxLayout.xs = "column">
   <ng-container *ngFor="let content of redditContents; let i = index">
-    <div class="display-card">
-        {{content['kind']}}
+    <div class="display-card" fxLayout="column">
+      <img class="image" src="{{content['data']['thumbnail']}}"/>
+      <div class="title" fxLayout="column" fxLayoutGap="3px">
+        <div><b>Title: </b>{{content['data']['title']}}</div>
+        <div><b>Upvotes:</b> {{content['data']['ups']}}</div>
+        <div><b>Upvote Ratio:</b> {{content['data']['upvote_ratio']}}</div>
+        <div><b>Author:</b> {{content['data']['author']}}</div>
+      </div>
     </div>
     <br>
   </ng-container>
