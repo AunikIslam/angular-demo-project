@@ -1,4 +1,4 @@
-<div class="datatable-container-list-view">
+<div class="datatable-container-list-view m-2">
   <table mat-table [dataSource]="wordsDataSource">
     <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
       <th style="background-color: blue" mat-header-cell *matHeaderCellDef>{{ column }}</th>
@@ -9,6 +9,7 @@
     <tr mat-row *matRowDef="let emprow; columns: displayedColumns"></tr>
   </table>
 </div>
+
 
 <div fxLayout="row wrap" fxLayout.xs = "column">
   <ng-container *ngFor="let content of redditContents; let i = index">
