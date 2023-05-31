@@ -9,13 +9,14 @@ import { ApiService } from './api-calls-service';
 })
 export class ApiCallsComponent implements OnInit {
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['word', 'score'];
   dataSource: any[] = [];
   filters = {
     limit: 15,
     t: 2023
   };
   redditContents = [];
+  wordsDataSource = [];
   
   constructor(private service: ApiService) {
   
@@ -40,7 +41,7 @@ export class ApiCallsComponent implements OnInit {
     }
     const api = 'https://api.datamuse.com/words';
     this.service.getData(api, filters).subscribe(pResponse => {
-      console.log(pResponse);
+      this.wordsDataSource = pResponse;
     })
   }
 
