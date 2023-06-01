@@ -2,7 +2,7 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 .parent {
-  margin-left: 15px;
+  padding-left: 15px;
 }
 .display-card {
   background-color: rgb(19, 35, 49);
