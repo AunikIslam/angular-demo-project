@@ -7,6 +7,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatTableModule } from '@angular/material/table';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   {
@@ -27,7 +31,10 @@ const routes: Routes = [
     BrowserModule,
     MatTableModule,
     MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
     FlexLayoutModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(routes)
   ],
   exports: [
