@@ -18,7 +18,6 @@ export class StudentComponent implements OnInit {
     this.student.Name = 'Aunik';
     this.student.Gender = 'Male';
     this.studentService.addStudent(this.student).subscribe( pResponse => {
-      console.log(pResponse);
     })
   }
 

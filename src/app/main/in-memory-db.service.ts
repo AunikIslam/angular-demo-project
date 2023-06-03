@@ -3,7 +3,9 @@ import { Student } from "../dto/student";
 
 export class InMemoryDBService implements InMemoryDbService {
   createDb() {
-    const students: Student[] = [];
+    const students = [
+      {Id: 1, Name: 'Aunik', Gender: 'Male'}
+    ];
     return {students};
   }
 }

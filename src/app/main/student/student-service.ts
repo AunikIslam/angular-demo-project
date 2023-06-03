@@ -31,7 +31,7 @@ export class StudentService {
   getStudents (): Observable<Student[]> {
     return this.http.get<Student[]>(this.heroesUrl)
       .pipe(
-        catchError(this.handleError('getHeroes', []))
+        catchError(this.handleError('getStudents', []))
       );
   }
 
