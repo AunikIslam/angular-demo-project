@@ -12,11 +12,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDBService } from './main/in-memory-db.service';
 
 const routes: Routes = [
   {
     path: 'api-calls',
     loadChildren: () => import('./main/api-calls/api-calls.module').then(m => m.ApiCallsModule)
+  },
+  {
+    path: 'students',
+    loadChildren: () => import('./main/student/student.module').then(m => m.StudentModule)
   }
 ]
 
@@ -33,7 +39,10 @@ const routes: Routes = [
     FlexLayoutModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDBService, { dataEncapsulation: false }
+    )
   ],
   exports: [
     RouterModule
