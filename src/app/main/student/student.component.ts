@@ -14,10 +14,14 @@ export class StudentComponent implements OnInit {
   constructor(private studentService: StudentService) { }
 
   ngOnInit() {
-    this.student.Id = 1;
-    this.student.Name = 'Aunik';
-    this.student.Gender = 'Male';
+    const student = new Student();
+    this.student.name = 'Aunik 2';
+    this.student.gender = 'Male';
     this.studentService.addStudent(this.student).subscribe( pResponse => {
+      this.studentService.getStudents().subscribe(p => {
+        console.log(p)
+
+      })
     })
   }
 
