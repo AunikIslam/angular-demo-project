@@ -9,7 +9,7 @@ import { ApiService } from './api-calls-service';
 })
 export class ApiCallsComponent implements OnInit {
 
-  displayedColumns: string[] = ['Word', 'Score'];
+  displayedColumns: string[] = ['Word', 'Score', 'Category'];
   dataSource: any[] = [];
   filters = {
     limit: 15,
