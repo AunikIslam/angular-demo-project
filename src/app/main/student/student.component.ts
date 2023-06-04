@@ -18,10 +18,6 @@ export class StudentComponent implements OnInit {
     this.student.name = 'Aunik 2';
     this.student.gender = 'Male';
     this.studentService.addStudent(this.student).subscribe( pResponse => {
-      this.studentService.getStudents().subscribe(p => {
-        console.log(p)
-
-      })
     })
   }
 

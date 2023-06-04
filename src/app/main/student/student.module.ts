@@ -6,6 +6,8 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
 import { MatTableModule } from "@angular/material/table";
 import { RouterModule, Routes } from "@angular/router";
+import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
+import { InMemoryDBService } from "../in-memory-db.service";
 import { SharedModule } from "../shared.module";
 import { StudentComponent } from "./student.component";
 
@@ -25,8 +27,7 @@ const routes: Routes = [
       CommonModule,
       MatIconModule, 
       MatFormFieldModule,
-      MatInputModule,
-      SharedModule
+      MatInputModule
     ], 
     exports: [
       RouterModule

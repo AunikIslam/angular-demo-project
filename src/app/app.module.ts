@@ -39,10 +39,7 @@ const routes: Routes = [
     FlexLayoutModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    RouterModule.forRoot(routes),
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDBService, { dataEncapsulation: false }
-    )
+    RouterModule.forRoot(routes)
   ],
   exports: [
     RouterModule

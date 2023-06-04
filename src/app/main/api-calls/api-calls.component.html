@@ -3,7 +3,7 @@
     <input matInput placeholder="First name" />
   </mat-form-field>
   
-  <div class="datatable-container-list-view m-2">
+  <div class="datatable-container-list-view m-1">
     <table mat-table [dataSource]="wordsDataSource">
       <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
         <th style="background-color: blue" mat-header-cell *matHeaderCellDef>{{ column }}</th>

@@ -8,7 +8,7 @@ import { Student } from "./student";
 
 export class StudentService {
   // // Base url
-  private heroesUrl = 'api/students';
+  private heroesUrl = 'http://localhost:3000/';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
