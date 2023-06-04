@@ -8,6 +8,7 @@ import { MatTableModule } from '@angular/material/table';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared.module';
 import { ApiCallsComponent } from './api-calls.component';
+import { TransformPipe } from './transform.pipe';
 
 const routes: Routes = [
   {
@@ -17,7 +18,7 @@ const routes: Routes = [
 ];
 
 @NgModule( {
-    declarations: [ ApiCallsComponent ],
+    declarations: [ ApiCallsComponent, TransformPipe ],
     imports: [
       MatTableModule,
       RouterModule.forChild(routes), 
