@@ -2,10 +2,10 @@
   <div class="datatable-container-list-view m-1">
     <table mat-table [dataSource]="wordsDataSource">
       <th class="table-header" mat-header-cell *matHeaderCellDef>Word</th>
-      <td mat-cell *matCellDef="let row">{{ emp.word }}</td>
+      <td mat-cell *matCellDef="let row">{{ row.word }}</td>
 
       <th class="table-header" mat-header-cell *matHeaderCellDef>Score</th>
-      <td mat-cell *matCellDef="let row">{{ emp.score }}</td>
+      <td mat-cell *matCellDef="let row">{{ row.score }}</td>
     
       <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
       <tr mat-row *matRowDef="let emprow; columns: displayedColumns"></tr>
