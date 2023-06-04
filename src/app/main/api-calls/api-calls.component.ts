@@ -9,7 +9,7 @@ import { ApiService } from './api-calls-service';
 })
 export class ApiCallsComponent implements OnInit {
 
-  displayedColumns: string[] = ['word', 'score'];
+  displayedColumns: string[] = ['Word', 'Score'];
   dataSource: any[] = [];
   filters = {
     limit: 15,
@@ -42,6 +42,7 @@ export class ApiCallsComponent implements OnInit {
     const api = 'https://api.datamuse.com/words';
     this.service.getData(api, filters).subscribe(pResponse => {
       this.wordsDataSource = pResponse;
+      console.log(this.wordsDataSource);
     })
   }
 
