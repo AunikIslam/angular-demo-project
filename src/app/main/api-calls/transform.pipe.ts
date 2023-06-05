@@ -5,14 +5,22 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TransformPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    if(value[0] == 'adj'){
-      return 'Adjective';
-    } else if(value[0] == 'n'){
-      return 'Noun';
-    } else if(value[0] == 'v'){
-      return 'Verb';
-    }
+  transform(values: any, args?: any): any {
+    let title = '';
+    values.forEach(pValue => {
+      
+      if(pValue == 'n'){
+        title += 'Noun, '
+      }
+      else if(pValue == 'adj'){
+        title += 'Adjective, '
+      }
+      else if(pValue == 'v'){
+        title += 'Verb, '
+      }
+    });
+
+    return title.replace(/,\s*$/, "");
     
   }
 
