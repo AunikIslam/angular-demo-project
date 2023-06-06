@@ -25,7 +25,8 @@ const routes: Routes = [
       CommonModule,
       MatIconModule, 
       MatFormFieldModule,
-      MatInputModule
+      MatInputModule,
+      SharedModule
     ], 
     exports: [
       RouterModule

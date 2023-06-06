@@ -14,9 +14,7 @@ export class StudentComponent implements OnInit {
   constructor(private studentService: StudentService) { }
 
   ngOnInit() {
-    const student = new Student();
-    this.student.name = 'Aunik 2';
-    this.student.gender = 'Male';
+    
   }
 
 }
