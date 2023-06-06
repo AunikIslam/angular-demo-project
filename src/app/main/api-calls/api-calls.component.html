@@ -1,4 +1,5 @@
 <div class="parent">
+  <div class="fs-6 mt-3 fw-semibold">This table represents a list of words and their cateogories</div>
   <div class="datatable-container-list-view m-1">
     <table mat-table [dataSource]="wordsDataSource">
       <ng-container matColumnDef="Word">
@@ -20,7 +21,9 @@
     </table>
   </div>
   
-  
+  <div class="fs-6 fw-semibold mt-3 mb-2 ml-2 p-2">This kanban view represents images posted on reddits through api call. Furthermore, the view represents caption, upvotes, upvote ration, and author's name.
+  </div>
+
   <div fxLayout="row wrap" fxLayout.xs = "column">
     <ng-container *ngFor="let content of redditContents; let i = index">
       <div class="display-card" fxLayout="column">
