@@ -26,6 +26,11 @@ const routes: Routes = [
   {
     path: 'graphs',
     loadChildren: () => import('./main/graphs/graph.module').then(m => m.GraphsModule)
+  },
+  {
+    path: '',
+    redirectTo: '',
+    pathMatch: 'full'
   }
 ]
 
