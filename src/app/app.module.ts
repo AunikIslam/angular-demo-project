@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { SharedModule } from './main/shared.module';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'students',
     loadChildren: () => import('./main/student/student.module').then(m => m.StudentModule)
+  },
+  {
+    path: 'graphs',
+    loadChildren: () => import('./main/graphs/graph.module').then(m => m.GraphsModule)
   }
 ]
 
@@ -38,7 +43,8 @@ const routes: Routes = [
     BrowserAnimationsModule,
     MatToolbarModule,
     RouterModule.forRoot(routes),
-    SharedModule
+    SharedModule,
+    NgApexchartsModule
   ],
   exports: [
     RouterModule
