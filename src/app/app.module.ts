@@ -25,12 +25,11 @@ const routes: Routes = [
   },
   {
     path: 'graphs',
-    loadChildren: () => import('./main/graphs/graph.module').then(m => m.GraphsModule)
+    loadChildren: () => import('./main/graphs/graphs.module').then(m => m.GraphsModule)
   },
   {
-    path: '',
-    redirectTo: '',
-    pathMatch: 'full'
+    path: 'home',
+    loadChildren: () => import('./main/home/home.module').then(m => m.HomeModule)
   }
 ]
 

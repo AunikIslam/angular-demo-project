@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
 
   constructor(private router: Router) { 
-    this.router.navigate(['api-calls'])
+    this.router.navigate(['home'])
   }
 
   ngOnInit() {
