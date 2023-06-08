@@ -137,9 +137,10 @@ export class GraphsComponent implements OnInit {
       response.forEach(pItem => {
         const series: any[] = [];
         series.push(pItem.intensity.actual);
-        series.push(pItem.intensity.forecast);
+        series.push(Math.round(((pItem.intensity.forecast / pItem.intensity.actual) * 100)));
 
         this.radialBarChart = {
+          label: pItem.intensity.index,
           series: series,
           chart: {
             height: 300,
@@ -161,7 +162,7 @@ export class GraphsComponent implements OnInit {
                   show: true
                 },
                 value: {
-                  show: true
+                  show: false
                 }
               }
             }
@@ -173,13 +174,19 @@ export class GraphsComponent implements OnInit {
             floating: true,
             fontSize: "12px",
             position: "left",
-            offsetX: 10,
+            offsetX: 0,
             offsetY: 10,
             labels: {
               useSeriesColors: true
             },
             formatter: function(seriesName, opts) {
-              return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex];
+              if(opts.seriesIndex == 0){
+                return seriesName + ":  " + pItem.intensity.actual;
+              }
+              else {
+                return seriesName + ":  " + pItem.intensity.forecast;
+              }
+              
             },
             itemMargin: {
               horizontal: 3
@@ -190,7 +197,7 @@ export class GraphsComponent implements OnInit {
               breakpoint: 480,
               options: {
                 legend: {
-                  show: false
+                  show: true
                 }
               }
             }
@@ -198,7 +205,6 @@ export class GraphsComponent implements OnInit {
         };
         this.radialBarTotalItems.push(this.radialBarChart);
       });
-      console.log(this.radialBarTotalItems);
     })
   }
 

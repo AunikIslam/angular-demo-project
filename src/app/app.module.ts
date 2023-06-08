@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { SharedModule } from './main/shared.module';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { MatCardModule } from '@angular/material/card';
 
 const routes: Routes = [
   {
@@ -46,6 +47,7 @@ const routes: Routes = [
     FlexLayoutModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    MatCardModule,
     RouterModule.forRoot(routes),
     SharedModule,
     NgApexchartsModule
