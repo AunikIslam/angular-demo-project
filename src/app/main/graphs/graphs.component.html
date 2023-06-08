@@ -1,26 +1,29 @@
-<div  class="p-2">
+<div class="p-2" *ngIf="totalItems.length > 0">
   This graph is constructed using ApexCharts. The data represented is gathered from an API call.
   <apx-chart
-[series]="chartData.series"
-[chart]="chartData.chart"
-[dataLabels]="chartData.dataLabels"
-[plotOptions]="chartData.plotOptions"
-[yaxis]="chartData.yaxis"
-[xaxis]="chartData.xaxis"
-[fill]="chartData.fill"
-[title]="chartData.title">
+[series]="chartData?.series"
+[chart]="chartData?.chart"
+[dataLabels]="chartData?.dataLabels"
+[plotOptions]="chartData?.plotOptions"
+[yaxis]="chartData?.yaxis"
+[xaxis]="chartData?.xaxis"
+[fill]="chartData?.fill"
+[title]="chartData?.title">
 </apx-chart>
 
 <div fxLayout="row wrap">
-  <apx-chart
-  [series]="radialBarChart.series"
-  [chart]="radialBarChart.chart"
-  [plotOptions]="radialBarChart.plotOptions"
-  [labels]="radialBarChart.labels"
-  [legend]="radialBarChart.legend"
-  [colors]="radialBarChart.colors"
-  [responsive]="radialBarChart.responsive"
-  ></apx-chart>
+  <ng-container *ngFor="let chart of radialBarTotalItems">
+    <apx-chart
+    [series]="chart.series"
+    [chart]="chart.chart"
+    [plotOptions]="chart.plotOptions"
+    [labels]="chart.labels"
+    [legend]="chart.legend"
+    [colors]="chart.colors"
+    [responsive]="chart.responsive"
+    ></apx-chart>
+  </ng-container>
+
 </div>
 
 </div>

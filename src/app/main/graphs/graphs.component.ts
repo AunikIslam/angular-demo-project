@@ -120,7 +120,7 @@ export class GraphsComponent implements OnInit {
         title: {
           text: "Brazil Central Bank data",
           floating: 0,
-          offsetY: 330,
+          offsetY: 30,
           align: "center",
           style: {
             color: "#444"
@@ -131,63 +131,75 @@ export class GraphsComponent implements OnInit {
   }
 
   reloadApiTwo(): void {
-    this.radialBarChart = {
-      series: [76, 67, 61, 90],
-      chart: {
-        height: 200,
-        type: "radialBar"
-      },
-      plotOptions: {
-        radialBar: {
-          offsetY: 0,
-          startAngle: 0,
-          endAngle: 270,
-          hollow: {
-            margin: 5,
-            size: "30%",
-            background: "transparent",
-            image: undefined
+    const url = 'https://api.carbonintensity.org.uk/intensity/date';
+    this.apiService.getData(url).subscribe(pResponse => {
+      const response = pResponse['data'].slice(0, 3);
+      response.forEach(pItem => {
+        const series: any[] = [];
+        series.push(pItem.intensity.actual);
+        series.push(pItem.intensity.forecast);
+
+        this.radialBarChart = {
+          series: series,
+          chart: {
+            height: 300,
+            type: "radialBar"
           },
-          dataLabels: {
-            name: {
-              show: false
+          plotOptions: {
+            radialBar: {
+              offsetY: 0,
+              startAngle: 0,
+              endAngle: 270,
+              hollow: {
+                margin: 5,
+                size: "30%",
+                background: "transparent",
+                image: undefined
+              },
+              dataLabels: {
+                name: {
+                  show: true
+                },
+                value: {
+                  show: true
+                }
+              }
+            }
+          },
+          colors: ["#1ab7ea", "#0084ff"],
+          labels: ["Actual", "Forecast"],
+          legend: {
+            show: true,
+            floating: true,
+            fontSize: "12px",
+            position: "left",
+            offsetX: 10,
+            offsetY: 10,
+            labels: {
+              useSeriesColors: true
             },
-            value: {
-              show: false
+            formatter: function(seriesName, opts) {
+              return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex];
+            },
+            itemMargin: {
+              horizontal: 3
             }
-          }
-        }
-      },
-      colors: ["#1ab7ea", "#0084ff", "#39539E", "#0077B5"],
-      labels: ["Vimeo", "Messenger", "Facebook", "LinkedIn"],
-      legend: {
-        show: true,
-        floating: true,
-        fontSize: "16px",
-        position: "left",
-        offsetX: 50,
-        offsetY: 10,
-        labels: {
-          useSeriesColors: true
-        },
-        formatter: function(seriesName, opts) {
-          return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex];
-        },
-        itemMargin: {
-          horizontal: 3
-        }
-      },
-      responsive: [
-        {
-          breakpoint: 480,
-          options: {
-            legend: {
-              show: false
+          },
+          responsive: [
+            {
+              breakpoint: 480,
+              options: {
+                legend: {
+                  show: false
+                }
+              }
             }
-          }
-        }
-      ]
-    };
+          ]
+        };
+        this.radialBarTotalItems.push(this.radialBarChart);
+      });
+      console.log(this.radialBarTotalItems);
+    })
   }
 
 }
