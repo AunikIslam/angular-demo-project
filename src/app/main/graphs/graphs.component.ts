@@ -134,7 +134,7 @@ export class GraphsComponent implements OnInit {
     this.radialBarChart = {
       series: [76, 67, 61, 90],
       chart: {
-        height: 190,
+        height: 200,
         type: "radialBar"
       },
       plotOptions: {
