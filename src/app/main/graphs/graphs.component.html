@@ -16,6 +16,8 @@
     <mat-card class="mat-elevation z-2 m-2">
       <div fxLayout="column">
         <div class="p-1">Air Index: {{chart.label}}</div>
+        <div class="p-1">From Date: {{chart.fromDate}}</div>
+        <div class="p-1">To Date: {{chart.toDate}}</div>
         <apx-chart
         [series]="chart.series"
         [chart]="chart.chart"

@@ -141,6 +141,8 @@ export class GraphsComponent implements OnInit {
 
         this.radialBarChart = {
           label: pItem.intensity.index,
+          fromDate: pItem.from,
+          toDate: pItem.to,
           series: series,
           chart: {
             height: 300,
