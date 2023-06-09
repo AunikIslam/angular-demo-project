@@ -15,7 +15,9 @@ export class GraphsComponent implements OnInit {
   radialBarChart: any;
   radialBarTotalItems: any [] = [];
   private unsubscribeAll: Subject<void>;
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService) { 
+    this.unsubscribeAll = new Subject();
+  }
 
   ngOnInit() {
     this.reloadApiOne();

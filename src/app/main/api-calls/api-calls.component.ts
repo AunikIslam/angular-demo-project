@@ -21,7 +21,7 @@ export class ApiCallsComponent implements OnInit {
   private unsubscribeAll: Subject<void>;
   
   constructor(private service: ApiService) {
-  
+    this.unsubscribeAll = new Subject();
     this.getFirstApiData();
     this.getSecondApiData();
    }
@@ -44,7 +44,6 @@ export class ApiCallsComponent implements OnInit {
     const api = 'https://api.datamuse.com/words';
     this.service.getData(api, filters).subscribe(pResponse => {
       this.wordsDataSource = pResponse;
-      console.log(this.wordsDataSource);
     })
   }
 
