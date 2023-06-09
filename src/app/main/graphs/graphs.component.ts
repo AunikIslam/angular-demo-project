@@ -14,7 +14,7 @@ export class GraphsComponent implements OnInit {
 
   radialBarChart: any;
   radialBarTotalItems: any [] = [];
-  private unsubscribeAll: Subject<any>;
+  private unsubscribeAll: Subject<void>;
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
@@ -210,6 +210,11 @@ export class GraphsComponent implements OnInit {
         this.radialBarTotalItems.push(this.radialBarChart);
       });
     })
+  }
+
+  ngOnDestroy(){
+    this.unsubscribeAll.next();
+    this.unsubscribeAll.complete();
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Subject } from 'rxjs';
 import { ApiService } from './api-calls-service';
 
 @Component({
@@ -17,6 +18,7 @@ export class ApiCallsComponent implements OnInit {
   };
   redditContents = [];
   wordsDataSource = [];
+  private unsubscribeAll: Subject<void>;
   
   constructor(private service: ApiService) {
   
@@ -44,6 +46,11 @@ export class ApiCallsComponent implements OnInit {
       this.wordsDataSource = pResponse;
       console.log(this.wordsDataSource);
     })
+  }
+
+  ngOnDestroy(){
+    this.unsubscribeAll.next();
+    this.unsubscribeAll.complete();
   }
 
 }
