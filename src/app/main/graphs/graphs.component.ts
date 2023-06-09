@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 import { ApiService } from '../api-calls/api-calls-service';
 
 @Component({
@@ -13,6 +14,7 @@ export class GraphsComponent implements OnInit {
 
   radialBarChart: any;
   radialBarTotalItems: any [] = [];
+  private unsubscribeAll: Subject<any>;
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
