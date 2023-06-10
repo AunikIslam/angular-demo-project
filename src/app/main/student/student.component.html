@@ -1,7 +1,7 @@
 <div class="parent input-container p-2">
   <mat-form-field appearance="outline">
     <mat-label>First Name</mat-label>
-    <input matInput placeholder="First Name" name="firstname"/>
+    <input [(ngModel)]="student.firstName" matInput placeholder="First Name" name="firstname"/>
   </mat-form-field>
 
   <mat-form-field appearance="outline">
@@ -12,11 +12,13 @@
   <mat-form-field appearance="outline">
     <mat-label>Gender</mat-label>
     <mat-select [(ngModel)]="student.gender">
-      <mat-option [value]="M">Male</mat-option>
-      <mat-option [value]="F">Female</mat-option>
-      <mat-option [value]="N">Non Binary</mat-option>
+      <mat-option [value]="'M'">Male</mat-option>
+      <mat-option [value]="'F'">Female</mat-option>
+      <mat-option [value]="'N'">Non Binary</mat-option>
     </mat-select>
   </mat-form-field>
+
+  <mat-checkbox>Current Student</mat-checkbox>
 
   <button color="accent" mat-raised-button>Submit</button>
 </div>
