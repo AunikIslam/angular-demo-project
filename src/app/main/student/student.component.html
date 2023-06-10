@@ -11,10 +11,10 @@
 
   <mat-form-field appearance="outline">
     <mat-label>Gender</mat-label>
-    <mat-select>
-      <mat-option>Male</mat-option>
-      <mat-option>Female</mat-option>
-      <mat-option>Non Binary</mat-option>
+    <mat-select [(ngModel)]="student.gender">
+      <mat-option [value]="M">Male</mat-option>
+      <mat-option [value]="F">Female</mat-option>
+      <mat-option [value]="N">Non Binary</mat-option>
     </mat-select>
   </mat-form-field>
 
