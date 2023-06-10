@@ -49,3 +49,9 @@
 .toolbar-design {
   background-color: rgb(215, 217, 223);
 }
+
+.input-container mat-form-field:not(:last-child),
+.input-container button:not(:last-child),
+.input-container mat-checkbox:not(:last-child) {
+  margin-right: 12px;
+}

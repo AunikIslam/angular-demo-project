@@ -14,6 +14,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { SharedModule } from './main/shared.module';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 const routes: Routes = [
   {
@@ -48,6 +51,9 @@ const routes: Routes = [
     BrowserAnimationsModule,
     MatToolbarModule,
     MatCardModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatCheckboxModule,
     RouterModule.forRoot(routes),
     SharedModule,
     NgApexchartsModule
