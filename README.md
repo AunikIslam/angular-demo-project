@@ -1,6 +1,6 @@
 # angular-demo-project
 
-This project demonstrate various aspects of Angular framework. It includes application of Angular Material Framework, Flex Layout, and implemetation of multiple APIs. The avaialable APIs are free and does not require any key.
+This project demonstrate various aspects of Angular framework. It includes application of Angular Material Framework, Flex Layout, and implemetation of multiple APIs. The avaialable APIs are free and does not require any key. The project contains four different components.
 
 For desiging and styling purpose HTML5, CSS3 & Bootstrap 5.3.0 has been used.
 
