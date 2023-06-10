@@ -6,6 +6,17 @@
 
   <mat-form-field appearance="outline">
     <mat-label>Last Name</mat-label>
-    <input matInput placeholder="Last Name" name="lastname"/>
+    <input [(ngModel)]="student.lastName" matInput placeholder="Last Name" name="lastname"/>
   </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Gender</mat-label>
+    <mat-select>
+      <mat-option>Male</mat-option>
+      <mat-option>Female</mat-option>
+      <mat-option>Non Binary</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button color="accent" mat-raised-button>Submit</button>
 </div>
